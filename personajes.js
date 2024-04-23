@@ -24,10 +24,19 @@ const createCards= (character)=>{
 
   const nameCharacter = document.createElement("h2");
   nameCharacter.textContent= character.name;
+
+  const locationNameCharacter = document.createElement("h4");
+  locationNameCharacter.textContent = character.location.name;
+
+  const speciesCharacter = document.createElement("p");
+  speciesCharacter.textContent = character.species;
+
   const genderCharacter = document.createElement("p");
   genderCharacter.textContent = character.gender;
 
   descripcionCard.appendChild(nameCharacter);
+  descripcionCard.appendChild(locationNameCharacter);
+  descripcionCard.appendChild(speciesCharacter);
   descripcionCard.appendChild(genderCharacter);
 
   card.appendChild(imgCard);
