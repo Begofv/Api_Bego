@@ -11,33 +11,55 @@ const getApi = async(URL) => {
   return data.results;
 }
 
+//Creacion de html 
+
 const createCards= (character)=>{
   const card = document.createElement("div");
   card.classList.add("cardPersonajes");
 
   const imgCard= document.createElement("img");
+  imgCard.setAttribute("class","imgCard");
+  imgCard.setAttribute("id", "imgCard");
   imgCard.src = character.image;
   imgCard.alt =character.name;
 
   const descripcionCard = document.createElement("div");
+  descripcionCard.setAttribute("class", "descripcionCard");
+  descripcionCard.setAttribute("id", "descripcionCard");
   descripcionCard.classList.add("descritionCard")
 
   const nameCharacter = document.createElement("h2");
-  nameCharacter.textContent= character.name;
+  nameCharacter.setAttribute("class", "nameCharacter")
+  nameCharacter.setAttribute("id", "nameCharacter")
+  nameCharacter.innerText= character.name;
 
   const locationNameCharacter = document.createElement("h4");
-  locationNameCharacter.textContent = character.location.name;
+  locationNameCharacter.setAttribute("class", "locationNameCharacter")
+  locationNameCharacter.setAttribute("id", "locationNameCharacter")
+  locationNameCharacter.innerText = character.location.name;
 
   const speciesCharacter = document.createElement("p");
-  speciesCharacter.textContent = character.species;
+  speciesCharacter.setAttribute("class", "speciesCharacter")
+  speciesCharacter.setAttribute("id", "speciesCharacter")
+  speciesCharacter.innerText = character.species;
 
   const genderCharacter = document.createElement("p");
-  genderCharacter.textContent = character.gender;
+  genderCharacter.setAttribute("class", "genderCharacter")
+  genderCharacter.setAttribute("id", "genderCharacter")
+  genderCharacter.innerText = character.gender;
 
+
+  const favCard = document.createElement("button");
+    favCard.setAttribute("class", "favCard");
+    favCard.setAttribute("id", "favCard ");
+    favCard.innerHTML = '<ion-icon name="heart-outline"></ion-icon>';
+
+//Todos lo appendChild
   descripcionCard.appendChild(nameCharacter);
   descripcionCard.appendChild(locationNameCharacter);
   descripcionCard.appendChild(speciesCharacter);
   descripcionCard.appendChild(genderCharacter);
+  descripcionCard.appendChild(favCard);
 
   card.appendChild(imgCard);
   card.appendChild(descripcionCard);
@@ -45,6 +67,7 @@ const createCards= (character)=>{
   containerCards.appendChild(card);
 }
 
+// Llamada a la api para los personajes
 const generateAllCharacter = async () => {
   const data = await getApi(URL1);
   data.map(character => createCards(character));
