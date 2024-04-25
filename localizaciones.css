@@ -26,70 +26,179 @@ body{
     flex-direction: column;
     align-items: center;
 }
-header{
-    width: 100%;
-    height: 10rem;
-    background-image: url(".descargas.jneg");
+
+nav {
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#4C4E5A; 
+    position: relative;
+    height: 70px;
+    width: 100vw;
+    }
+
+    /* 
+    height: 7rem;
     background-size: contain;
-}
-
-h1{
-font-size: 5rem;
-text-shadow: 0 0 15px var(--azulOscuro);
-color: var(--azulmasOsc);
-font-family: "Delicious Handrawn", cursive;
-}
-
-hr{
-    width: 90%;
-    margin: 1rem;
-}
-/*
-img{
-    width:50px;
-}
-*/
-main{
-    margin-top: 1rem;
-    width: 100%;
-    height: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-}
-
-.txtLocalizaciones{
-    width: 30rem;
-    height: 1rem;
-    font-size: 1.5rem;
-    border-radius: 20px;
-    background-color: var(--verdeAmarillo);
+    margin-left: 1.5rem;
     padding: 1rem;
-    color:white;
-    font-family: "Delicious Handrawn", cursive;
-}
+    background-color:#4C4E5A; 
 
-.containerCardsLocalizacion{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /*sirve para responsive*/
-}
+    justify-content: flex-end;
+    float: right;
+    /* hacemos que la cabecera ocupe el ancho completo de la página */
+    /* left: 0; /* Posicionamos la cabecera al lado izquierdo */
+    /* top: 0; Posicionamos la cabecera pegada arriba */
+    /* position: fixed;  */ 
+
+   
+    
+    .logo{
+       margin-right: 20rem;
+
+    }
+    .logoi{
+        width: 125px;
+        height: 125px;
+ 
+     }
+     .menu{
+        /* margin-right: 20rem;
+        padding: 0;
+        list-style: none; */
+        /* background-color:var(--cabecera); */
+        font-family: "Delicious Handrawn", cursive;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        
+    }
+    
+        .menu li {
+            display: inline-block;
+            line-height: 80px;
+            margin-left: 10px;
+            margin-bottom: 0.5rem;
+            /*list-style-type: none;*/
+
+        }
+    
+         .menu a {  
+            text-decoration: none;
+            display: block;
+            margin-left: 0;
+            border-radius: 50px;
+            font-size: 2rem;   
+            padding: 10px 25px;
+            color:#a6cccc;
+            /* background-color: #11101b; */
+            transition: background-color 0.2s;
+            font-family: "Delicious Handrawn", cursive;
+
+        }
+    
+        .menu a:hover {
+            color: #88e23b; 
+           }
+
+        @media (max-width:600px) {
+            nav ul{
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                text-align: center;
+                background: #11101b;
+                gap: 0;
+                overflow: hidden;
+            }
+            nav ul li{
+                padding: 20px;
+                padding-top: 0;
+            }
+            .menu-icon{
+                display: block;
+            }
+            #menuList{
+                transition: all 0.5s;
+            }
+        }
+      
+        .menu-icon{
+            display: none;
+        }
+        
+        .menu-icon i{
+            color: #eae9f3;
+            font-size: 30px;
+        }
+
+    h1{
+        font-size: 5rem;
+        text-shadow: 0 0 15px var(--azulOscuro);
+        color: var(--azulmasOsc);
+        font-family: "Delicious Handrawn", cursive;
+        }
+        
+        hr{
+            width: 90%;
+            margin: 1rem;
+        }
+        
+        main{
+            margin-top: 1rem;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .txtLocalizaciones{
+            width: 30rem;
+            height: 1rem;
+            font-size: 1.5rem;
+            border-radius: 20px;
+            background-color: var(--azulOscuro);
+            padding: 1rem;
+            color:white;
+            font-family: "Delicious Handrawn", cursive;
+            flex-wrap:wrap;
+        
+        }
+        
+        .containerCardsLocalizacion{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /*sirve para responsive*/
+        }  
+
 .cardLocalizacio{
-    width: 20rem;
+    width: 21rem;
     height: 10rem;
     background-color: var(--verdeOscuro);
     border: #048c6c;
     border-radius: 10px;
     margin: 1rem;
     display: flex; 
+    background-image: url('/imagenes/rick.png');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    /* Otros estilos para el cuerpo de la página */
+    opacity: 0.7;
+
 }
 
-.cardLocalizacion > img{
-    width: 50%;
-    height: 100%;
+.imgCard{
+    width:50px;
+    border-radius: 5%;
 }
 .localizacionCard{
     width: 50%;
@@ -97,18 +206,19 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 h2{
     text-align: center;
     color: var(--amarillo);
-    text-shadow: 0 0 15px white
-    ;
+    text-shadow: 0 0 7px var(--amarillo);
+    margin-top: 0.5rem;  
 }
-.p{
-    font-size: 1.5rem;
+p{
     text-align: center;
-    color: #048c6c;
-    margin-top: 2rem;
+    color: var(--amarillo);
+    text-shadow: 0 0 5px var(--amarillo);
+    margin-top: 0.5rem;
 }
 footer{
     width: 100%;
@@ -119,4 +229,40 @@ footer{
     align-items: center;
     position: fixed;
     bottom: 0;
-}
+} */ 
+
+footer{
+    width: 100%;
+    height: 1.5rem;
+    background-color: #232137;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+} 
+
+.favCard{
+    background-color: --verdeAmarillo(133, 39, 39);
+    border: 3px solid white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--azulRick);
+    padding: 0.1rem;
+
+    }
+  
+    .favCard:hover{
+      border: 3px solid;
+      transition: all 300ms ease;
+    }
+  
+    .favCard ion-icon{
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+  
