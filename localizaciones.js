@@ -15,6 +15,7 @@ const createCards= (location)=>{
   const card = document.createElement("div");
   card.classList.add("cardLocalizacio");
 
+
   const locationCard = document.createElement("div");
   locationCard.classList.add("locationCard")
 
@@ -27,13 +28,55 @@ const createCards= (location)=>{
   const dimensionlocation = document.createElement("p");
   dimensionlocation.textContent = location.dimension;
 
+  const favCard = document.createElement("button");
+  favCard.setAttribute("class", "favCard");
+  favCard.setAttribute("id", "favCard ");
+  favCard.innerHTML = '<ion-icon name="heart-outline"></ion-icon>';
+
   locationCard.appendChild(namelocation);
   locationCard.appendChild(typelocation);
   locationCard.appendChild(dimensionlocation);
+  locationCard.appendChild(favCard);
 
   card.appendChild(locationCard);
 
   containerCardsLocalizacion.appendChild(card);
+
+
+
+  let favCardClick = false;
+
+  // Función para manejar el clic en el ícono de corazón
+  function handleFavoriteClick(localizacionId) {
+    // Verificar si el evento ya está en favoritos
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const index = favorites.indexOf(localizacionId);
+    // Si no está en favoritos, agregarlo; de lo contrario, quitarlo
+    if (index === -1) {
+      favorites.push(localizacionId);
+    } else {
+      favorites.splice(index, 1);
+    }
+    // Guardar los favoritos actualizados en el localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+
+  // En el bloque donde creas el elemento favCard y agregas el evento click:
+  favCard.addEventListener("click", () => {
+    // Obtener el ID del evento asociado a este elemento favCard
+    const localizacionId = event; // Reemplaza event.id con la propiedad adecuada que identifica el evento
+
+    // Cambiar el ícono del corazón y manejar el estado de favoritos
+    if (favCardClick === false) {
+      favCard.innerHTML = '<ion-icon name="heart"></ion-icon>';
+      handleFavoriteClick(localizacionId);
+      favCardClick = true;
+    } else {
+      favCard.innerHTML = '<ion-icon name="heart-outline"></ion-icon>';
+      handleFavoriteClick(localizacionId);
+      favCardClick = false;
+    }
+  });
 }
 
 const generateAlllocation = async () => {

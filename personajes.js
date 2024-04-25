@@ -66,7 +66,44 @@ const createCards= (character)=>{
   card.appendChild(descripcionCard);
 
   containerCards.appendChild(card);
+
+  let favCardClick = false;
+
+  // Función para manejar el clic en el ícono de corazón
+  function handleFavoriteClick(personajeId) {
+    // Verificar si el evento ya está en favoritos
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    const index = favorites.indexOf(personajeId);
+    // Si no está en favoritos, agregarlo; de lo contrario, quitarlo
+    if (index === -1) {
+      favorites.push(personajeId
+        );
+    } else {
+      favorites.splice(index, 1);
+    }
+    // Guardar los favoritos actualizados en el localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }
+
+  // En el bloque donde creas el elemento favCard y agregas el evento click:
+  favCard.addEventListener("click", () => {
+    // Obtener el ID del evento asociado a este elemento favCard
+    const personajeId = event; // Reemplaza event.id con la propiedad adecuada que identifica el evento
+
+    // Cambiar el ícono del corazón y manejar el estado de favoritos
+    if (favCardClick === false) {
+      favCard.innerHTML = '<ion-icon name="heart"></ion-icon>';
+      handleFavoriteClick(personajeId);
+      favCardClick = true;
+    } else {
+      favCard.innerHTML = '<ion-icon name="heart-outline"></ion-icon>';
+      handleFavoriteClick(personajeId);
+      favCardClick = false;
+    }
+  });
+  
 }
+
 
 // Llamada a la api para los personajes
 const generateAllCharacter = async () => {
