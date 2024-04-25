@@ -26,7 +26,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-header{
+/* header{
     width: 100%;
     height: 7rem;
     background-image: url(".descargas.jneg");
@@ -38,10 +38,19 @@ header{
     padding: 1rem;
     background-color:#4C4E5A; 
 }
-    
+     */
  nav {
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#4C4E5A; 
+    position: relative;
+    height: 70px;
+    width: 100vw;
+    }
 
-    width: 100%;
+    /* 
     height: 7rem;
     background-size: contain;
     display: flex;
@@ -54,22 +63,30 @@ header{
     justify-content: flex-end;
     float: right;
     /* hacemos que la cabecera ocupe el ancho completo de la página */
-    left: 0; /* Posicionamos la cabecera al lado izquierdo */
-    top: 0; /* Posicionamos la cabecera pegada arriba */
-    position: fixed; 
-    }
+    /* left: 0; /* Posicionamos la cabecera al lado izquierdo */
+    /* top: 0; Posicionamos la cabecera pegada arriba */
+    /* position: fixed;  */ 
+
+   
     
     .logo{
        margin-right: 20rem;
 
     }
+    .logoi{
+        width: 125px;
+        height: 125px;
+ 
+     }
      .menu{
-        margin-right: 20rem;
+        /* margin-right: 20rem;
         padding: 0;
-        list-style: none;
-        background-color:var(--cabecera);
+        list-style: none; */
+        /* background-color:var(--cabecera); */
         font-family: "Delicious Handrawn", cursive;
-
+        display: flex;
+        gap: 30px;
+        align-items: center;
         
     }
     
@@ -78,24 +95,61 @@ header{
             line-height: 80px;
             margin-left: 10px;
             margin-bottom: 0.5rem;
+            /*list-style-type: none;*/
+
         }
     
          .menu a {  
-            color: #a6cccc;
-            font-size: 2rem;   
-            display: block;
-            padding: 0 10px;
             text-decoration: none;
+            display: block;
             margin-left: 0;
+            border-radius: 50px;
+            font-size: 2rem;   
+            padding: 10px 25px;
+            color:#a6cccc;
+            /* background-color: #11101b; */
+            transition: background-color 0.2s;
             font-family: "Delicious Handrawn", cursive;
 
         }
     
         .menu a:hover {
-         color: #88e23b; 
+            color: #88e23b; 
+           }
+
+        @media (max-width:600px) {
+            nav ul{
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                text-align: center;
+                background: #11101b;
+                gap: 0;
+                overflow: hidden;
+            }
+            nav ul li{
+                padding: 20px;
+                padding-top: 0;
+            }
+            .menu-icon{
+                display: block;
+            }
+            #menuList{
+                transition: all 0.5s;
+            }
         }
-
-
+      
+        .menu-icon{
+            display: none;
+        }
+        
+        .menu-icon i{
+            color: #eae9f3;
+            font-size: 30px;
+        }
+        
 
 h1{
 font-size: 5rem;

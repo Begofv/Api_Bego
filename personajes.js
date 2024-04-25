@@ -54,6 +54,7 @@ const createCards= (character)=>{
     favCard.setAttribute("id", "favCard ");
     favCard.innerHTML = '<ion-icon name="heart-outline"></ion-icon>';
 
+
 //Todos lo appendChild
   descripcionCard.appendChild(nameCharacter);
   descripcionCard.appendChild(locationNameCharacter);
