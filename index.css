@@ -1,0 +1,191 @@
+:root{
+    --azulRick: #a6cccc;
+    --verde: #60a85f;
+    --verdeAmarillo: #88e23b;
+    --amarillo: #ebe480;
+    --verdeOscuro: #048c6c;
+    --verdeMilitar: #657132; 
+    --azulOscuro: #598fac;
+    --azulmasOsc: #232137;
+    --cabecera:#4C4E5A;
+
+  }
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+  *{
+    margin:0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: auto;
+    background: var(--azulRick);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    width: 100%;
+    height: 7rem;
+    background-image: url(".descargas.jneg");
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1.5rem;
+    padding: 1rem;
+    background-color:#4C4E5A; 
+}
+    
+ nav {
+
+    width: 100%;
+    height: 7rem;
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1.5rem;
+    padding: 1rem;
+    background-color:#4C4E5A; 
+
+    justify-content: flex-end;
+    float: right;
+    /* hacemos que la cabecera ocupe el ancho completo de la página */
+    left: 0; /* Posicionamos la cabecera al lado izquierdo */
+    top: 0; /* Posicionamos la cabecera pegada arriba */
+    position: fixed; 
+    }
+    
+    .logo{
+       margin-right: 20rem;
+
+    }
+     .menu{
+        margin-right: 20rem;
+        padding: 0;
+        list-style: none;
+        background-color:var(--cabecera);
+        font-family: "Delicious Handrawn", cursive;
+
+        
+    }
+    
+        .menu li {
+            display: inline-block;
+            line-height: 80px;
+            margin-left: 10px;
+            margin-bottom: 0.5rem;
+        }
+    
+         .menu a {  
+            color: #a6cccc;
+            font-size: 2rem;   
+            display: block;
+            padding: 0 10px;
+            text-decoration: none;
+            margin-left: 0;
+            font-family: "Delicious Handrawn", cursive;
+
+        }
+    
+        .menu a:hover {
+         color: #88e23b; 
+        }
+
+
+
+h1{
+font-size: 5rem;
+text-shadow: 0 0 15px var(--azulOscuro);
+color: var(--azulmasOsc);
+font-family: "Delicious Handrawn", cursive;
+}
+
+hr{
+    width: 90%;
+    margin: 1rem;
+}
+
+
+main{
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textoBola{
+    width: 30rem;
+    height: 1rem;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background-color: var(--azulOscuro);
+    padding: 1rem;
+    color:white;
+    font-family: "Delicious Handrawn", cursive;
+    flex-wrap:wrap;
+}
+.imgenBola{
+    width: 50%;
+}
+
+.bolas{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /*sirve para responsive*/
+    background: var(--azulRick);
+    flex-direction: column;
+}
+.bolaPersonajes{
+    width: 20rem;
+    height: 10rem;
+    background-color: var(--verdeOscuro);
+    border: #048c6c;
+    border-radius: 10px;
+    margin: 1rem;
+    display: flex; 
+}
+
+.bolaLocalizacion{
+    width: 20rem;
+    height: 10rem;
+    background-color: var(--verdeOscuro);
+    border: #048c6c;
+    border-radius: 10px;
+    margin: 1rem;
+    display: flex; 
+}
+.bolaJuego{
+    width: 20rem;
+    height: 10rem;
+    background-color: var(--verdeOscuro);
+    border: #048c6c;
+    border-radius: 10px;
+    margin: 1rem;
+    display: flex; 
+}
+p{
+    text-align: center;
+    color: var(--amarillo);
+    text-shadow: 0 0 5px var(--amarillo);
+    margin-top: 0.5rem;
+}
+
+footer{
+    width: 100%;
+    height: 1.5rem;
+    background-color: #232137;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+} 
