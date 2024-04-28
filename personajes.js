@@ -1,6 +1,8 @@
 const txtPersonajes = document.getElementById("txtPersonajes");
 const containerCards = document.getElementById("containerCards");
-const URL1= "https://rickandmortyapi.com/api/character";
+
+
+const URL1= "https://rickandmortyapi.com/api/character/";
 const URL2= "https://rickandmortyapi.com/api/character/?name=";
 
 
@@ -88,7 +90,7 @@ const createCards= (character)=>{
   // En el bloque donde creas el elemento favCard y agregas el evento click:
   favCard.addEventListener("click", () => {
     // Obtener el ID del evento asociado a este elemento favCard
-    const personajeId = event; // Reemplaza event.id con la propiedad adecuada que identifica el evento
+    const personajeId = event; //
 
     // Cambiar el ícono del corazón y manejar el estado de favoritos
     if (favCardClick === false) {
@@ -107,6 +109,7 @@ const createCards= (character)=>{
 const generateAllCharacter = async () => {
   const data = await getApi(URL1);
   data.map(character => createCards(character));
+  
 }
 
 const getCharacterByName = async () => {
@@ -117,3 +120,11 @@ const getCharacterByName = async () => {
 
 window.addEventListener("DOMContentLoaded", generateAllCharacter);
 txtPersonajes.addEventListener("keyup", getCharacterByName);
+
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.menu').classList.toggle('active');
+});
+
+
+
