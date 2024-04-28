@@ -7,14 +7,14 @@
     --verdeMilitar: #657132; 
     --azulOscuro: #598fac;
     --azulmasOsc: #232137;
+    --cabecera:#4C4E5A;
 
   }
 
 
   @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
- 
 
-*{
+  *{
     margin:0;
     padding: 0;
 }
@@ -27,7 +27,7 @@ body{
     align-items: center;
 }
 
-nav {
+ nav {
     padding: 30px 20px;
     display: flex;
     align-items: center;
@@ -37,36 +37,16 @@ nav {
     height: 70px;
     width: 100vw;
     }
-
-    /* 
-    height: 7rem;
-    background-size: contain;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 1.5rem;
-    padding: 1rem;
-    background-color:#4C4E5A; 
-
-    justify-content: flex-end;
-    float: right;
-    /* hacemos que la cabecera ocupe el ancho completo de la página */
-    /* left: 0; /* Posicionamos la cabecera al lado izquierdo */
-    /* top: 0; Posicionamos la cabecera pegada arriba */
-    /* position: fixed;  */ 
-
-   
-    
     .logo{
-       margin-right: 20rem;
-
-    }
-    .logoi{
-        width: 125px;
-        height: 125px;
+        margin-right: 20rem;
  
      }
-     .menu{
+     .logoi{
+         width: 125px;
+         height: 125px;
+  
+      }
+      .menu{
         /* margin-right: 20rem;
         padding: 0;
         list-style: none; */
@@ -80,7 +60,7 @@ nav {
     
         .menu li {
             display: inline-block;
-            line-height: 80px;
+            line-height: 50px;
             margin-left: 10px;
             margin-bottom: 0.5rem;
             /*list-style-type: none;*/
@@ -92,7 +72,7 @@ nav {
             display: block;
             margin-left: 0;
             border-radius: 50px;
-            font-size: 2rem;   
+            font-size: 1.5rem;   
             padding: 10px 25px;
             color:#a6cccc;
             /* background-color: #11101b; */
@@ -104,11 +84,33 @@ nav {
         .menu a:hover {
             color: #88e23b; 
            }
+        .menu-toggle {
+            display: none; /* Ocultar el botón en pantallas grandes */
+          }
+
+          @media (max-width: 768px) {
+            .menu {
+              display: flex;
+            }
+            
+            .menu-toggle {
+              display: flex;
+              position: fixed;
+              top: 10px;
+              right: 20px;
+              font-size: 24px;
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              z-index: 999;
+              color: #fff;
+            }
+          }
 
         @media (max-width:600px) {
             nav ul{
                 position: absolute;
-                top: 70px;
+                top: 50px;
                 left: 0;
                 right: 0;
                 flex-direction: column;
@@ -137,27 +139,26 @@ nav {
             color: #eae9f3;
             font-size: 30px;
         }
-
-    h1{
-        font-size: 5rem;
-        text-shadow: 0 0 15px var(--azulOscuro);
-        color: var(--azulmasOsc);
-        font-family: "Delicious Handrawn", cursive;
-        }
+        h1{
+            font-size: 5rem;
+            text-shadow: 0 0 15px var(--azulOscuro);
+            color: var(--azulmasOsc);
+            font-family: "Delicious Handrawn", cursive;
+            }
         
-        hr{
-            width: 90%;
-            margin: 1rem;
-        }
+hr{
+  width: 90%;
+  margin: 1rem;
+   }
         
-        main{
-            margin-top: 1rem;
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+   main{
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
         .txtLocalizaciones{
             width: 30rem;
             height: 1rem;
@@ -188,11 +189,6 @@ nav {
     border-radius: 10px;
     margin: 1rem;
     display: flex; 
-    background-image: url('/imagenes/rick.png');
-    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
-    background-position: center; /* Centra la imagen en el fondo */
-    /* Otros estilos para el cuerpo de la página */
-    opacity: 0.7;
 
 }
 
@@ -229,20 +225,9 @@ footer{
     align-items: center;
     position: fixed;
     bottom: 0;
-} */ 
+}
 
-footer{
-    width: 100%;
-    height: 1.5rem;
-    background-color: #232137;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-} 
-
-.favCard{
+/* .favCard{
     background-color: --verdeAmarillo(133, 39, 39);
     border: 3px solid white;
     cursor: pointer;
@@ -263,6 +248,4 @@ footer{
     .favCard ion-icon{
       font-weight: 900;
       font-size: 1rem;
-    }
-
-  
+    } */

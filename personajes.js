@@ -107,6 +107,7 @@ const createCards= (character)=>{
 const generateAllCharacter = async () => {
   const data = await getApi(URL1);
   data.map(character => createCards(character));
+  
 }
 
 const getCharacterByName = async () => {
