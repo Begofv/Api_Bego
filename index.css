@@ -76,17 +76,37 @@ body{
             font-size: 1.5rem;   
             padding: 10px 25px;
             color:#a6cccc;
-            /* background-color: #11101b; */
+            background-color:#4C4E5A;
             transition: background-color 0.2s;
             font-family: "Delicious Handrawn", cursive;
 
         }
     
         .menu a:hover {
-            color: #88e23b; 
+            background-color: var(--azulRick);
+            color:#4C4E5A;
            }
-        .menu-toggle {
+           
+           .menu-toggle {
             display: none; /* Ocultar el botón en pantallas grandes */
+          }
+
+          @media (max-width: 768px) {
+            .menu-toggle{
+              display: block;
+            }
+            
+            .menu {
+            
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10px; /* Ajustar según la altura del encabezado */
+            left: 0;
+            background-color: #4C4E5A;
+            padding: 0.5rem;
+            width: 100%;
+            }
           }
 
           @media (max-width: 768px) {
@@ -147,6 +167,8 @@ font-size: 5rem;
 text-shadow: 0 0 15px var(--azulOscuro);
 color: var(--azulmasOsc);
 font-family: "Delicious Handrawn", cursive;
+align-items: center;
+text-align: center;
 }
 
 hr{
@@ -168,7 +190,9 @@ p{
     text-align: center;
     font-family: "Delicious Handrawn", cursive;
     margin: 1rem;  
-    color: var(--amarillo);
+    color:var(--azulmasOsc);
+    text-shadow: 0 0 5px var(--azulmasOsc);
+
 }
 
 h2{
@@ -195,6 +219,7 @@ section {
 }
 .imgIndex{
     width: 350px;
+    height: 350px;
     border-radius: 5%;
 }
 
@@ -205,6 +230,9 @@ section {
     box-shadow: 0px 2px 4px 5px --azulRick(250, 68, 84, 1);
 }
 
+a{
+    text-decoration: none;
+}
 a:hover{
     text-decoration: none;
 }

@@ -95,3 +95,8 @@ txtLocalizaciones.addEventListener("keyup", getlocationByName);
 
 
 // añadir quien reside en ese planera, que personaje, con el icono del mas
+
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('.menu').classList.toggle('active');
+});

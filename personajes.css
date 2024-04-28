@@ -68,7 +68,7 @@ body{
 
         }
     
-         .menu a {  
+        .menu a {  
             text-decoration: none;
             display: block;
             margin-left: 0;
@@ -76,37 +76,38 @@ body{
             font-size: 1.5rem;   
             padding: 10px 25px;
             color:#a6cccc;
-            /* background-color: #11101b; */
+            background-color:#4C4E5A;
             transition: background-color 0.2s;
             font-family: "Delicious Handrawn", cursive;
 
         }
     
         .menu a:hover {
-            color: #88e23b; 
+            background-color: var(--azulRick);
+            color:#4C4E5A;
            }
         .menu-toggle {
             display: none; /* Ocultar el botón en pantallas grandes */
           }
 
           @media (max-width: 768px) {
-            .menu {
-              display: flex;
+            .menu-toggle{
+              display: block;
             }
             
-            .menu-toggle {
-              display: flex;
-              position: fixed;
-              top: 10px;
-              right: 20px;
-              font-size: 24px;
-              background: transparent;
-              border: none;
-              cursor: pointer;
-              z-index: 999;
-              color: #fff;
+            .menu {
+            
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 10px; /* Ajustar según la altura del encabezado */
+            left: 0;
+            background-color: #4C4E5A;
+            padding: 0.5rem;
+            width: 100%;
             }
           }
+
 
         @media (max-width:600px) {
             nav ul{
