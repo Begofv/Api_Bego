@@ -1,0 +1,205 @@
+:root{
+    --azulRick: #a6cccc;
+    --verde: #60a85f;
+    --verdeAmarillo: #88e23b;
+    --amarillo: #ebe480;
+    --verdeOscuro: #048c6c;
+    --verdeMilitar: #657132; 
+    --azulOscuro: #598fac;
+    --azulmasOsc: #232137;
+    --cabecera:#4C4E5A;
+
+  }
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+  *{
+    margin:0;
+    padding: 0;
+}
+body{
+  
+        width: 100vw;
+        height: 100vh; /* Ajusta la altura para que la imagen ocupe toda la ventana */
+        margin: 0; /* Asegura que no haya margen alrededor del cuerpo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+    
+
+
+header{
+    width: 100%;
+    height: 7rem;
+    background-image: url(".descargas.jneg");
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1.5rem;
+    padding: 1rem;
+    background-color:#4C4E5A; 
+}
+    
+ nav {
+
+    width: 100%;
+    height: 7rem;
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1.5rem;
+    padding: 1rem;
+    background-color:#4C4E5A; 
+
+    justify-content: flex-end;
+    float: right;
+    /* hacemos que la cabecera ocupe el ancho completo de la página */
+    left: 0; /* Posicionamos la cabecera al lado izquierdo */
+    top: 0; /* Posicionamos la cabecera pegada arriba */
+    position: fixed; 
+    }
+    
+    .logo{
+       margin-right: 20rem;
+
+    }
+     .menu{
+        margin-right: 20rem;
+        padding: 0;
+        list-style: none;
+        background-color:var(--cabecera);
+        font-family: "Delicious Handrawn", cursive;
+
+        
+    }
+    
+        .menu li {
+            display: inline-block;
+            line-height: 80px;
+            margin-left: 10px;
+            margin-bottom: 0.5rem;
+        }
+    
+         .menu a {  
+            color: #a6cccc;
+            font-size: 2rem;   
+            display: block;
+            padding: 0 10px;
+            text-decoration: none;
+            margin-left: 0;
+            font-family: "Delicious Handrawn", cursive;
+
+        }
+    
+        .menu a:hover {
+         color: #88e23b; 
+        }
+
+
+
+h1{
+font-size: 5rem;
+text-shadow: 0 0 15px var(--azulOscuro);
+color: var(--azulmasOsc);
+font-family: "Delicious Handrawn", cursive;
+}
+
+hr{
+    width: 90%;
+    margin: 1rem;
+}
+
+
+main{
+    margin-top: 1rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/imagenes/rick.png');
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: repeat-y;
+}
+
+
+
+  
+  /* .welcome h1{
+    font-size: 50px;
+    text-align: center;
+    font-family: valorant;
+    color: #fa4454;
+} */
+
+p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Delicious Handrawn", cursive;
+    margin: 1rem;  
+    color: var(--amarillo);
+}
+
+h2{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--azulRick);
+    font-family: "Delicious Handrawn", cursive;
+    text-shadow: 0 0 5px var(--azulRick);
+}
+
+section {
+    box-shadow: 0px 2px 4px 5px rgba(0, 0, 0, 0.1);
+    width: auto;
+    height: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imgIndex{
+    width: 350px;
+    border-radius: 5%;
+}
+
+.personajes:hover{
+    box-shadow: 0px 2px 4px 5px --azulRick(250, 68, 84, 1);
+}
+.localizacion:hover{
+    box-shadow: 0px 2px 4px 5px --azulRick(250, 68, 84, 1);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 580px) {
+    p{
+        width: 50%;
+    }
+    section{
+        width: 80%;
+        margin-left: 40px;
+    }
+    
+  }
+
+footer{
+    width: 100%;
+    height: 1.5rem;
+    background-color: #232137;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+} 

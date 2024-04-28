@@ -92,3 +92,6 @@ const getlocationByName = async () => {
 
 window.addEventListener("DOMContentLoaded", generateAlllocation);
 txtLocalizaciones.addEventListener("keyup", getlocationByName);
+
+
+// añadir quien reside en ese planera, que personaje, con el icono del mas

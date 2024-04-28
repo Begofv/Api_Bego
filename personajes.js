@@ -72,17 +72,17 @@ const createCards= (character)=>{
   // Función para manejar el clic en el ícono de corazón
   function handleFavoriteClick(personajeId) {
     // Verificar si el evento ya está en favoritos
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    const index = favorites.indexOf(personajeId);
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+    const index = favoritos.indexOf(personajeId);
     // Si no está en favoritos, agregarlo; de lo contrario, quitarlo
     if (index === -1) {
-      favorites.push(personajeId
+      favoritos.push(personajeId
         );
     } else {
-      favorites.splice(index, 1);
+      favoritos.splice(index, 1);
     }
     // Guardar los favoritos actualizados en el localStorage
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
   }
 
   // En el bloque donde creas el elemento favCard y agregas el evento click:
@@ -101,9 +101,7 @@ const createCards= (character)=>{
       favCardClick = false;
     }
   });
-  
 }
-
 
 // Llamada a la api para los personajes
 const generateAllCharacter = async () => {
